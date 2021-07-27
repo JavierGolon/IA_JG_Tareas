@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+## Inteligencia Artificial 1 2s 2021
 
-You can use the [editor on GitHub](https://github.com/JavierGolon/IA_JG_Tareas/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Estudiante: Javier Alejandro Golón López
+Tareas y ejercicios
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### Tarea 01 Reflex Agent
 
-# Header 1
-## Header 2
-### Header 3
+Ejercicio visitar los 8 estados un minimo de 2 veces cada uno
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JavierGolon/IA_JG_Tareas/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Reflex Agent](https://javiergolon.github.io/IA_JG_Tareas/Reflex_Agent.html)
