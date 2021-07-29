@@ -1,0 +1,58 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+
+  .boxes{
+    display:inline-block;
+    box-sizing: border-box;
+  }
+  .container {
+    padding:1%;
+    margin: auto;
+    width:660px;
+    height:auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    justify-content: center;
+  
+  }
+
+  .card {
+    width: 150px;                 /* Set width of cards */
+    display: flex;                /* Children use Flexbox */
+    flex-direction: column;       /* Rotate Axis */
+    border: 1px solid #bcef9a;    /* Set up Border */
+    border-radius: 4px;           /* Slightly Curve edges */
+    overflow: hidden;             /* Fixes the corners */
+    margin: 5px;                  /* Add space between cards */
+  }
+  
+  .card-header {
+    color: #242523;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #88e058;
+    background-color: #88e058;
+    padding: 5px 10px;
+  }
+  
+  .card-main {
+    display: flex;              /* Children use Flexbox */
+    flex-direction: column;     /* Rotate Axis to Vertical */
+    justify-content: center;    /* Group Children in Center */
+    align-items: center;        /* Group Children in Center (on cross axis) */
+    padding: 15px 0;            /* Add padding to the top/bottom */
+  }
+  
+  .material-icons {
+    font-size: 36px;
+    color: #D32F2F;
+    margin-bottom: 5px;
+  }
+  
+  .main-description {
+    color: #242523;
+    font-size: 12px;
+    text-align: center;
+  }
