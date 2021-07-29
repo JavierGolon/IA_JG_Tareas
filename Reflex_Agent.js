@@ -26,10 +26,44 @@ function MarkState(states){
 	}else if(states[0]=="A" &&  states[1]=="CLEAN" && states[2]=="CLEAN"){
 		contadores[6]=contadores[6]+1;
 		document.getElementById("e7").innerHTML=contadores[6];
-	}else if(states[0]=="B" &&  states[1]=="CLEAN" && states[2]=="CLEAN	"){
+		if (estado7visitado =="si"){
+			console.log("ensuciando 7");
+			EnsuciarA();
+			estado7visitado= "no";
+		}else{
+			estado7visitado = "si";
+		}
+	}else if(states[0]=="B" &&  states[1]=="CLEAN" && states[2]=="CLEAN"){
+		console.log('en el 8')
 		contadores[7]=contadores[7]+1;
 		document.getElementById("e8").innerHTML=contadores[7];
+		if (estado8visitado == "si"){
+			EnsuciarB();
+			estado8visitado="No";
+		}else{
+			estado8visitado="si"
+		}
+		document.getElementById("e8").innerHTML=contadores[7];
 	}
+}
+
+function EnsuciarA(){
+		dirty="si"
+		states[0]="A";
+		states[1] ="DIRTY";
+		states[2] = "DIRTY";
+
+	document.getElementById("logs").innerHTML+="<br> Ensuciando A";
+}
+
+
+function EnsuciarB(){
+		dirty="si"
+		states[0]="B";
+		states[1] ="DIRTY";
+		states[2] = "DIRTY";
+	
+	document.getElementById("logs").innerHTML+="<br> Ensuciando B";
 }
 
 function test(states){
@@ -40,51 +74,33 @@ function test(states){
 		// Marcador de estado
 		MarkState(states)
       	document.getElementById("logs").innerHTML+="<br>Location: ".concat(location).concat(" | Action: ").concat(action_result);
-      	if (action_result == "CLEAN"){
+      	if (dirty =="si"){
+			dirty="no"
+		  }
+		  else if (action_result == "CLEAN"){
         	if (location == "A") states[1] = "CLEAN";
          	else if (location == "B") states[2] = "CLEAN";
       	}
-      	else if (action_result == "RIGHT") {
-			if (states[1]=="CLEAN" && states[2]=="CLEAN"&&states[0]!="B"){
-				if(repeat =="no"){
-					document.getElementById("logs").innerHTML+="<br> En no 2";
-					states[0]="B";
-					repeat="si";
-				}else{
-
-				
-				document.getElementById("logs").innerHTML+="<br> Ensuciando";
-				states[0]="B";
-				states[1] ="DIRTY";
-				states[2] = "DIRTY";
-				repeat="no"
-			}
-			}else{
-				states[0] = "B";
-			}  
-			
+      	else if (action_result == "RIGHT") {		
+				states[0] = "B";			
 		  }
-      	else if (action_result == "LEFT") {
-			if (states[1]=="CLEAN" && states[2]=="CLEAN" && states[0]!="A"){
-				if (repeat == "no"){
-					document.getElementById("logs").innerHTML+="<br> En no";
-					states[0]="A";
-					repeat="si";
-				}else{
-				document.getElementById("logs").innerHTML+="<br> Ensuciando 1";
-				states[0]="A";
-				states[1] ="DIRTY";
-				states[2] = "DIRTY";
-				repeat="no"
-			}
-			}else{
+      	else if (action_result == "LEFT") {		
 				states[0] = "A";
-			}  
 		}
 	if (stopIteration()==true){
 		clearTimeout(mytimer);
 	}else{		
 	mytimer = setTimeout(function(){ test(states); }, 2000);
+	}
+}
+
+function LastState(location,action_result){
+	if (location =="A"){
+		location = "B"
+		document.getElementById("logs").innerHTML+="<br>Location: ".concat(location).concat(" | Action: ").concat(action_result);
+	}else{
+		location = "A"
+		document.getElementById("logs").innerHTML+="<br>Location: ".concat(location).concat(" | Action: ").concat(action_result);
 	}
 }
 function stopIteration(mytimer){
@@ -101,7 +117,9 @@ function Inicio(){
 	
 }
 
-var repeat = "no";
+var estado7visitado = "no";
+var estado8visitado = "no";
+var dirty = "no";
 var states = ["A","DIRTY","DIRTY"];
 var contadores =[0,0,0,0,0,0,0,0];
 test(states);
